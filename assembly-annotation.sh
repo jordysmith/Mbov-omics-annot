@@ -1,5 +1,5 @@
 # Assembly and annotation methods for novel M. bovis strain 3488
-# Author: Jordy Smith
+# Author: Jordy Smith, 2023
 #!/usr/bin/env bash
 
 threads=16
