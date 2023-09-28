@@ -24,8 +24,8 @@ do
 	out2=/storage/jordy/trim_short_reads/${base}_R2.fastq.gz
 done
 
-SR1="/storage/jordy/trim_short_reads/TB18-003488_R1.fastq.gz"		# (Filtered, trimmed) Short reads
-SR2="/storage/jordy/trim_short_reads/TB18-003488_R2.fastq.gz"
+SR1="/storage/jordy/trim_short_reads/003488_R1.fastq.gz"		# (Filtered, trimmed) Short reads
+SR2="/storage/jordy/trim_short_reads/003488_R2.fastq.gz"
 
 # Filter long reads
 mkdir $ONT/filt_trim_fastqs
@@ -41,7 +41,7 @@ do
     pigz $ONT/$cooked/"${base}".fq
 done
 
-LR="/storage/ONT/sup_reads/filt_trim_fastqs/TB18-003488.fq.gz"		# (Filtered, trimmed) Long reads
+LR="/storage/ONT/sup_reads/filt_trim_fastqs/003488.fq.gz"		# (Filtered, trimmed) Long reads
 ################################################################
 # Genome assembly
 # Assembly of long reads into contigs
@@ -127,7 +127,7 @@ cd $workflow/draftC
 
 /home/jordy/MaSuRCA-4.1.0/bin/polca.sh \
 -a $workflow/draftA_polypolish_medaka/polished.fasta/polished.fasta \
--r '/storage/jordy/trim_short_reads/TB18-003488_R1.fastq.gz /storage/jordy/trim_short_reads/TB18-003488_R2.fastq.gz' \
+-r '/storage/jordy/trim_short_reads/003488_R1.fastq.gz /storage/jordy/trim_short_reads/003488_R2.fastq.gz' \
 -t 16
 
 # The Flye assembly, corrected with Medaka and polished with Polypolish, then POLCA
@@ -162,7 +162,7 @@ mkdir $workflow/draftD_polca
 cd $workflow/draftD_polca
 /home/jordy/MaSuRCA-4.1.0/bin/polca.sh \
 -a $workflow/draftD_polypolish/polished.fasta \
--r '/storage/jordy/trim_short_reads/TB18-003488_R1.fastq.gz /storage/jordy/trim_short_reads/TB18-003488_R2.fastq.gz' \
+-r '/storage/jordy/trim_short_reads/003488_R1.fastq.gz /storage/jordy/trim_short_reads/003488_R2.fastq.gz' \
 -t 16
 
 # A re-polished, circular unitig, draftE
